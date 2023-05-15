@@ -1,10 +1,10 @@
-import { render, screen, cleanup } from '@testing-library/react'
+import { render, screen, cleanup } from '@testing-library/react' // Reactコンポーネントをレンダリングし、コンポーネントのDOMをスクリーン上に表示するためのユーティリティ関数
 import '@testing-library/jest-dom/extend-expect'
-import { getPage, initTestHelpers } from 'next-page-tester'
+import { getPage, initTestHelpers } from 'next-page-tester' // Next.jsアプリケーションのページをテストするために使用
 import { setupServer } from 'msw/node'
 import { handlers } from '../mock/handlers'
 
-initTestHelpers()
+initTestHelpers() // Jestのグローバル環境を設定
 
 const server = setupServer(...handlers)
 
