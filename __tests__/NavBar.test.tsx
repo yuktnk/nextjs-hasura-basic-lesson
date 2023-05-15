@@ -37,7 +37,7 @@ describe('Navigation Test Cases', () => {
     expect(await screen.findByText('HasuraへFetchを行なう')).toBeInTheDocument()
 
     userEvent.click(screen.getByTestId('crud-nav'))
-    expect(await screen.findByText('Hasrura CRUD')).toBeInTheDocument()
+    expect(await screen.findByText('Hasura CRUD')).toBeInTheDocument()
 
     userEvent.click(screen.getByTestId('ssg-nav'))
     expect(await screen.findByText('SSG + ISR')).toBeInTheDocument()
