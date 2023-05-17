@@ -6,7 +6,7 @@ import {
 } from '@apollo/client'
 import 'cross-fetch/polyfill'
 
-export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE'
+// export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE'
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined // 初期値のセットなし
 
@@ -15,6 +15,9 @@ const createApolloClient = () => {
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
       uri: 'https://notable-lacewing-49.hasura.app/v1/graphql',
+      headers: {
+        'x-hasura-admin-secret' : process.env.NEXT_PUBLIC_HASURA_KEY
+      }
     }),
     cache: new InMemoryCache(),
   })
