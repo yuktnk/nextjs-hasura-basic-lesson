@@ -5,6 +5,9 @@ import { setupServer } from 'msw/node'
 import { handlers } from '../mock/handlers'
 import userEvent from '@testing-library/user-event'
 
+process.env.NEXT_PUBLIC_HASURA_URL =
+  'https://notable-lacewing-49.hasura.app/v1/graphql'
+
 initTestHelpers() // Jestのグローバル環境を設定
 
 const server = setupServer(...handlers)
